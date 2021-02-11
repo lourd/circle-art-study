@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/circle-art-study/static/css/main.05ba0688.chunk.css",
+    "main.js": "/circle-art-study/static/js/main.bbd6d8c3.chunk.js",
+    "main.js.map": "/circle-art-study/static/js/main.bbd6d8c3.chunk.js.map",
+    "runtime-main.js": "/circle-art-study/static/js/runtime-main.eeffe247.js",
+    "runtime-main.js.map": "/circle-art-study/static/js/runtime-main.eeffe247.js.map",
+    "static/js/2.1e4f369f.chunk.js": "/circle-art-study/static/js/2.1e4f369f.chunk.js",
+    "static/js/2.1e4f369f.chunk.js.map": "/circle-art-study/static/js/2.1e4f369f.chunk.js.map",
+    "index.html": "/circle-art-study/index.html",
+    "static/css/main.05ba0688.chunk.css.map": "/circle-art-study/static/css/main.05ba0688.chunk.css.map",
+    "static/js/2.1e4f369f.chunk.js.LICENSE.txt": "/circle-art-study/static/js/2.1e4f369f.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.eeffe247.js",
+    "static/js/2.1e4f369f.chunk.js",
+    "static/css/main.05ba0688.chunk.css",
+    "static/js/main.bbd6d8c3.chunk.js"
+  ]
+}
