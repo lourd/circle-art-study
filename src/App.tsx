@@ -1,4 +1,4 @@
-import React, { ReactNode, useState } from 'react';
+import React, { ReactNode } from 'react';
 import { useWindowSize } from 'react-use';
 import { useTweaks } from 'use-tweaks';
 import './App.css';
@@ -6,7 +6,6 @@ import './App.css';
 const INITIAL_RADIAL_OFFSET = Math.PI / 6;
 
 function App() {
-  const [initRadialOffset, setOffset] = useState(INITIAL_RADIAL_OFFSET);
   const {
     numCirclesPerGroup,
     circleGap,
@@ -21,7 +20,8 @@ function App() {
   const { width: windowWidth, height: windowHeight } = useWindowSize();
   const circles: ReactNode[] = [];
   for (let group = 0; group < numGroups; group++) {
-    const radialOffset = initRadialOffset + (group * 2 * Math.PI) / numGroups;
+    const radialOffset =
+      INITIAL_RADIAL_OFFSET + (group * 2 * Math.PI) / numGroups;
     for (let i = 0; i < numCirclesPerGroup; i++) {
       const radius = innerCircleRadius + i ** 1.6 * circleGap;
       const cosine = Math.cos(radialOffset);
