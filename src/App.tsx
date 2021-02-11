@@ -13,6 +13,8 @@ function App() {
     numGroups,
     expansionFactor,
     showContainingCircle,
+    rotate,
+    rotationsPerSecond, // rotations per second
   } = useTweaks({
     numCirclesPerGroup: { value: 12, min: 1, max: 40, step: 1 },
     circleGap: { value: 12, min: 0.1, max: 30 },
@@ -20,6 +22,8 @@ function App() {
     numGroups: { value: 6, min: 2, max: 72, step: 1 },
     expansionFactor: { value: 1, min: 1, max: 4 },
     showContainingCircle: true,
+    rotate: false,
+    rotationsPerSecond: { value: 0.1, min: 0.01, max: 5 },
   }) as any; // having to force any otherwise an error about "does not exist on type"
   const { width: windowWidth, height: windowHeight } = useWindowSize();
   const circles: ReactNode[] = [];
@@ -52,7 +56,16 @@ function App() {
     innerCircleRadius;
   return (
     <div className="App">
-      <svg height={windowHeight} width={windowWidth}>
+      <svg
+        height={windowHeight}
+        width={windowWidth}
+        className={rotate ? 'rotate' : ''}
+        style={
+          {
+            '--cycle-speed': `${1 / rotationsPerSecond}s`,
+          } as any
+        }
+      >
         <circle
           fill="#fff"
           r={innerCircleRadius}
@@ -71,6 +84,9 @@ function App() {
         )}
         {circles}
       </svg>
+      <a href="https://github.com/lourd/generative-circles-study">
+        Generative Circles Study
+      </a>
     </div>
   );
 }

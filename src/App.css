@@ -8,19 +8,31 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
 }
 
-/* @media (prefers-reduced-motion: no-preference) {
-  svg {
-    animation: spin infinite 5s linear;
-  }
-} */
+svg {
+  overflow: visible;
+}
 
-/* @keyframes spin {
+svg.rotate {
+  animation: spin infinite var(--cycle-speed) linear;
+}
+
+@keyframes spin {
   from {
     transform: rotate(0deg);
   }
   to {
     transform: rotate(360deg);
   }
-} */
+}
+
+a {
+  color: white;
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  font-size: 12px;
+  font-weight: bold;
+}
