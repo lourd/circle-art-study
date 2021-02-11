@@ -1,3 +1,3 @@
-# [Circle art study](https://lourd.github.io/circle-art-study)
+# [Generative Circles Study](https://lourd.github.io/generative-circles-study)
 
-A quick study exploring a nested-circle design generatively
+A quick study exploring a nested circle design generatively.
