@@ -1,0 +1,26 @@
+.App {
+  background-color: #111245;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* @media (prefers-reduced-motion: no-preference) {
+  svg {
+    animation: spin infinite 5s linear;
+  }
+} */
+
+/* @keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+} */
