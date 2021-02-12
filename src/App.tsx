@@ -83,7 +83,7 @@ function App() {
         )}
         {circles}
       </svg>
-      <a href="https://github.com/lourd/generative-circles-study">
+      <a href="https://github.com/lourd/generative-circles">
         Generative Circles Study
       </a>
     </div>
