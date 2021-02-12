@@ -8,19 +8,19 @@ const INITIAL_RADIAL_OFFSET = Math.PI / 6;
 function App() {
   const {
     numCirclesPerGroup,
-    circleGap,
+    gapConstant,
     innerCircleRadius,
     numGroups,
-    expansionFactor,
+    gapFactor,
     showContainingCircle,
     rotate,
     rotationsPerSecond, // rotations per second
   } = useTweaks({
+    numGroups: { value: 6, min: 1, max: 72, step: 1 },
     numCirclesPerGroup: { value: 12, min: 1, max: 40, step: 1 },
-    circleGap: { value: 12, min: 0.1, max: 30 },
+    gapConstant: { value: 12, min: 0.1, max: 30 },
+    gapFactor: { value: 1, min: 0, max: 4 },
     innerCircleRadius: { value: 20, min: 1, max: 100, step: 1 },
-    numGroups: { value: 6, min: 2, max: 72, step: 1 },
-    expansionFactor: { value: 1, min: 1, max: 4 },
     showContainingCircle: true,
     rotate: false,
     rotationsPerSecond: { value: 0.1, min: 0.01, max: 5 },
@@ -30,8 +30,8 @@ function App() {
   for (let group = 0; group < numGroups; group++) {
     const radialOffset =
       INITIAL_RADIAL_OFFSET + (group * 2 * Math.PI) / numGroups;
-    for (let i = 0; i < numCirclesPerGroup; i++) {
-      const radius = innerCircleRadius + i ** expansionFactor * circleGap;
+    for (let i = 1; i <= numCirclesPerGroup; i++) {
+      const radius = innerCircleRadius + i ** gapFactor * gapConstant;
       const cosine = Math.cos(radialOffset);
       const sine = Math.sin(radialOffset);
       const cxOffset = -cosine * innerCircleRadius;
@@ -52,8 +52,7 @@ function App() {
     }
   }
   const containingCircleRadius =
-    (numCirclesPerGroup - 1) ** expansionFactor * circleGap * 2 +
-    innerCircleRadius;
+    numCirclesPerGroup ** gapFactor * gapConstant * 2 + innerCircleRadius;
   return (
     <div className="App">
       <svg
